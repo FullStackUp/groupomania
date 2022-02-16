@@ -1,32 +1,23 @@
 "use strict";
-require("dotenv").config();
+
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || "development";
+const config = require(__dirname + "/../config/config.js")[env];
 const db = {};
 
 let sequelize;
-sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    port: process.env.DB_PORT,
-    logging: false,
-  }
-);
-
-try {
-  sequelize.authenticate();
-  console.log("Connection MySQL successful...");
-  /*sequelize.query("SELECT * FROM Users").then(([results, metadata]) => {
-    console.log(results);
-  });*/
-} catch (error) {
-  console.error("Connection MySQL failed:", error);
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
 }
 
 fs.readdirSync(__dirname)
@@ -49,9 +40,17 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
+try {
+  sequelize.authenticate();
+  console.log("Connection MySQL successful...");
+  /*sequelize.query("SELECT * FROM Users").then(([results, metadata]) => {
+    console.log(results);
+  });*/
+} catch (error) {
+  console.error("Connection MySQL failed:", error);
+}
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
-db.users = require("./user.js")(sequelize, Sequelize);
 
 module.exports = db;

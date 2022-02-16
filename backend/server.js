@@ -1,53 +1,41 @@
-//Création d'un serveur (localhost) :
+// Chemin d'accès pour le fichier .env
+require("dotenv").config({ path: "./config/.env" });
+
+// Permet d'importer le package http de Node
 const http = require("http");
-//Importion à l'aide de "module.exports" :
+
+// Permet d'importer l'application
 const app = require("./app");
 
-const normalizePort = (val) => {
-  const port = parseInt(val, 10);
+// Indique à l'application sur quel port elle doit être lancée
+app.set("port", process.env.PORT || 3000);
 
-  if (isNaN(port)) {
-    return val;
-  }
-  if (port >= 0) {
-    return port;
-  }
-  return false;
-};
-
-//Configuration du "port" de l'application express :
-const port = normalizePort(process.env.LH_PORT || "3000");
-app.set("port", port);
-
-const errorHandler = (error) => {
-  if (error.syscall !== "listen") {
-    throw error;
-  }
-  const address = server.address();
-  const bind = typeof address === "string" ? "pipe" + address : "port" + port;
-  switch (error.code) {
-    case "EACCES":
-      console.error(bind + " requires elevated privileges.");
-      process.exit(1);
-      break;
-    case "EADDRINUSE":
-      console.error(bind + " is already in use.");
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-};
-
-//En utilise la methode "createServer" du package "http" pour finir la création du server :
+// Crée le serveur
 const server = http.createServer(app);
 
-server.on("error", errorHandler);
-server.on("listening", () => {
-  const address = server.address();
-  const bind = typeof address === "string" ? "pipe" + address : "port " + port;
-  console.log("Listening on " + bind);
+// Indique le port qui doit utilisé par le serveur
+server.listen(process.env.PORT || 3000, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });
 
-//Configuration du serveur pour qu'il écoute:
-server.listen(port);
+// Socket.io
+// const io = require('socket.io')(server);
+// const cfg = require('./config.json');
+// const tw = require('node-tweet-stream')(cfg);
+
+// tw.track('socket.io');
+// tw.track('javascript');
+
+// io.on('connection', function(socket) {
+//     console.log('A user is connected');
+//     socket.on('chatPost', function(post) {
+//         console.log('message reçu : ' + post);
+//     })
+// })
+
+// io.on('connection', () => {
+//     console.log('A user is connected');
+//     socket.on('chatPost', function(post) {
+//         console.log('message reçu : ' + post);
+//     })
+// })
