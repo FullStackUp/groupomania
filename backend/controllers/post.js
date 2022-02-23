@@ -20,9 +20,11 @@ exports.createPost = (req, res, next) => {
 
   // Permet de contrôler la longueur du titre et du contenu du message
   if (content.length <= 4) {
-    return res.status(400).json({
-      error: "Le contenu du message doit contenir au moins 4 caractères",
-    });
+    return res
+      .status(400)
+      .json({
+        error: "Le contenu du message doit contenir au moins 4 caractères",
+      });
   }
 
   db.User.findOne({

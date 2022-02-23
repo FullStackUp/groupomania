@@ -6,6 +6,25 @@ require("dotenv").config({ path: "./config/.env" });
 
 const db = require("../models/index");
 
+const { roles } = require("../middleware/roles");
+
+// Permet de gerer les autorisation des utilisateurs
+exports.grantAccess = function (action, resource) {
+  return async (req, res, next) => {
+    try {
+      const permission = roles.can(req.user.role)[action](resource);
+      if (!permission.granted) {
+        return res.status(401).json({
+          error: "Vous n'avez pas l'autorisation d'exécuter cet action !",
+        });
+      }
+      next();
+    } catch (error) {
+      next(error);
+    }
+  };
+};
+
 // Regex de validation
 const emailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -171,9 +190,7 @@ exports.modifyUserProfile = (req, res, next) => {
   const userObject = req.file
     ? {
         ...JSON.parse(req.body.user),
-        imageProfile: `${req.protocol}://${req.get("host")}/images/${
-          req.file.filename
-        }`,
+        imageProfile: `/images/${req.file.filename}`,
       }
     : { ...req.body };
 

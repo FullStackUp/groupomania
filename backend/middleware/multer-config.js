@@ -12,7 +12,7 @@ const MIME_TYPES = {
 const storage = multer.diskStorage({
   // Permet de stocker les images dans le dossier images
   destination: (req, file, callback) => {
-    callback(null, "images");
+    callback(null, "../frontend/public/images");
   },
   // Permet de générer un nouveau nom de fichier image
   filename: (req, file, callback) => {

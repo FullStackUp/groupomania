@@ -161,7 +161,7 @@ h2 {
   min-width: 40%;
   max-width: 60%;
   margin: 3rem auto;
-  background: #ffb1b1;
+  background: gainsboro;
   border-radius: 25px;
   @media (max-width: 500px) {
     min-width: 80%;
@@ -180,11 +180,11 @@ h2 {
     }
     &__modify__btnInvisible {
       border: none;
-      background-color: #ffb1b1;
+      background-color: gainsboro;
       color: #3f3d56;
       &:hover,
       &:focus {
-        color: white;
+        color: #ff6363;
         cursor: pointer;
       }
     }
@@ -232,7 +232,7 @@ h2 {
     outline-style: none;
     &:hover,
     &:focus {
-      border: 3px solid #ff6363;
+      border: 3px solid #ff6363o;
       color: #ff6363;
       cursor: pointer;
     }

@@ -562,7 +562,7 @@ export default {
   display: none;
 }
 .newPost {
-  background: #ffb1b1;
+  background: gainsboro;
   border-radius: 25px;
   margin: auto;
   margin-top: 2rem;
@@ -611,10 +611,10 @@ export default {
         align-items: center;
         color: #3f3d56;
         border: none;
-        background-color: #ffb1b1;
+        background-color: gainsboro;
         &:hover,
         &:focus {
-          color: white;
+          color: #ff6363;
         }
       }
     }
@@ -640,7 +640,7 @@ export default {
   &__item {
     display: flex;
     flex-direction: column;
-    border: 2px solid #ff6363;
+    border: 2px solid gainsboro;
     border-radius: 25px;
     margin: auto;
     margin-top: 2rem;
@@ -785,7 +785,7 @@ export default {
   &__item {
     display: flex;
     flex-direction: column;
-    border: 2px solid #ff6363;
+    border: 2px solid gainsboro;
     border-radius: 25px;
     margin: auto;
     margin-top: 0.5rem;
@@ -822,7 +822,7 @@ export default {
     }
   }
   &__newComment {
-    background: #ffb1b1;
+    background: gainsboro;
     border-radius: 25px;
     margin: auto;
     margin-top: 0.5rem;

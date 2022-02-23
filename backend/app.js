@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
-// const cors = require('cors');
+const cors = require("cors");
 
 // Permet d'accéder au chemin du système de fichiers
 const path = require("path");
@@ -11,7 +11,7 @@ const path = require("path");
 // Permet de créer l'application express
 const app = express();
 
-// Middleware CORS
+// Configuration avec le middleware CORS
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(

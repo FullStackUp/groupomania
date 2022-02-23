@@ -176,7 +176,6 @@ export default {
         font-weight: bold;
         text-decoration: none;
         color: #e60a0a;
-        // color: #ff6363;
       }
     }
   }
