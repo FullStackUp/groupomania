@@ -10,14 +10,6 @@
     </div>
 
     <div class="home__display">
-      <!--<div class="home__display__picture">
-        <img
-          class="home__display__picture"
-          src="../assets/bottomImage450.png"
-          alt="Représentation de trois personnes qui discutent via un chat"
-        />
-      </div>-->
-
       <form @submit.prevent="login" class="home__display__form">
         <h1 class="home__display__form__title">Connexion</h1>
 
@@ -117,19 +109,7 @@ export default {
       display: flex;
       flex-direction: column-reverse;
     }
-    /*&__picture {
-      float: left;
-      padding-top: 4rem;
-      margin: 0 0 0 3rem;
-      @media (max-width: 1170px) {
-        max-width: 350px;
-      }
-      @media (max-width: 930px) {
-        max-width: 250px;
-        margin: auto;
-        padding-top: 2rem;
-      }
-    }*/
+
     &__form {
       display: flex;
       flex-direction: column;

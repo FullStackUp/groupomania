@@ -558,33 +558,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#post {
+  background-color: whitesmoke;
+}
 .invisible {
   display: none;
 }
 .newPost {
   background: gainsboro;
-  border-radius: 25px;
+  border: 3px solid black;
+  border-radius: 10px;
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
-  width: 50%;
-  @media (max-width: 950px) {
-    width: 60%;
-  }
-  @media (max-width: 768px) {
-    width: 70%;
-  }
-  @media (max-width: 550px) {
-    width: 80%;
-  }
-  @media (max-width: 450px) {
-    width: 90%;
-  }
+  width: 70%;
   &__photo__image {
     width: 47px;
   }
   &__content__text {
-    border-radius: 0 15px;
+    border-radius: 10px;
     border: none;
     margin: 1.5rem 0 0 0;
     max-width: 50rem;
@@ -640,29 +632,22 @@ export default {
   &__item {
     display: flex;
     flex-direction: column;
-    border: 2px solid gainsboro;
-    border-radius: 25px;
+    border: 3px solid black;
+    border-radius: 15px;
     margin: auto;
     margin-top: 2rem;
-    padding: 1rem;
-    width: 50%;
-    @media (max-width: 950px) {
-      width: 60%;
-    }
-    @media (max-width: 768px) {
-      width: 70%;
-      padding: 0.5rem;
-    }
-    @media (max-width: 550px) {
-      width: 80%;
-    }
-    @media (max-width: 450px) {
-      width: 90%;
+    width: 70%;
+    &:hover,
+    &:focus {
+      width: 71%;
+      background-color: white;
     }
     &__information {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: lightgrey;
+      border-radius: 10px 10px 0px 0px;
       @media (max-width: 380px) {
         display: flex;
         flex-wrap: wrap;
@@ -713,10 +698,10 @@ export default {
           align-items: center;
           padding: 2rem 0;
           margin: 1rem 0;
-          border-radius: 15px;
+          border-radius: 10px;
           box-shadow: 5px 5px 15px grey;
           &__textarea {
-            border-radius: 5px;
+            border-radius: 10px;
             width: 90%;
           }
           &__option {
@@ -782,26 +767,20 @@ export default {
 .displayComment {
   display: flex;
   flex-direction: column;
+
   &__item {
     display: flex;
     flex-direction: column;
-    border: 2px solid gainsboro;
+    border: 3px solid black;
     border-radius: 25px;
     margin: auto;
     margin-top: 0.5rem;
     padding: 0.5rem;
-    width: 40%;
-    @media (max-width: 950px) {
-      width: 50%;
-    }
-    @media (max-width: 768px) {
-      width: 60%;
-    }
-    @media (max-width: 550px) {
-      width: 70%;
-    }
-    @media (max-width: 450px) {
-      width: 80%;
+    width: 60%;
+    &:hover,
+    &:focus {
+      width: 61%;
+      background-color: white;
     }
     &__information {
       display: flex;
@@ -823,29 +802,17 @@ export default {
   }
   &__newComment {
     background: gainsboro;
-    border-radius: 25px;
+    border-radius: 20px;
     margin: auto;
     margin-top: 0.5rem;
     padding: 0.5rem;
-    width: 40%;
-    @media (max-width: 950px) {
-      width: 50%;
-    }
-    @media (max-width: 768px) {
-      width: 60%;
-    }
-    @media (max-width: 550px) {
-      width: 70%;
-    }
-    @media (max-width: 450px) {
-      width: 80%;
-    }
+    width: 60%;
     &__form {
       display: flex;
       align-items: center;
       justify-content: center;
       &__text {
-        border-radius: 15px;
+        border-radius: 10px;
         border: none;
         margin: 0.5rem;
         padding: 0.5rem;
@@ -853,6 +820,7 @@ export default {
         width: 90%;
         min-height: 3rem;
       }
+
       &__button {
         border: 2px solid #3f3d56;
         border-radius: 25px;
