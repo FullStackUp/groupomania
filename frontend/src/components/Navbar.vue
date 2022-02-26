@@ -83,8 +83,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   padding: 0.8rem;
   box-shadow: 0px 5px 15px #3f3d56;
+
   &__logo {
     width: 3rem;
   }
