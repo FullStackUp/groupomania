@@ -96,7 +96,7 @@ export default {
 <style scoped lang="scss">
 .home {
   &__title {
-    @media (max-width: 2000px) {
+    @media (max-width: 1600px) {
       max-width: 400px;
       width: 3rem;
     }
@@ -105,7 +105,7 @@ export default {
     margin-top: 3rem;
     display: flex;
     justify-content: space-around;
-    @media (max-width: 2000px) {
+    @media (max-width: 1600px) {
       display: flex;
       flex-direction: column-reverse;
     }
@@ -119,7 +119,7 @@ export default {
       border: 3px solid #3f3d56;
       border-radius: 10px;
       padding-top: 2rem;
-      @media (max-width: 2000px) {
+      @media (max-width: 1600px) {
         min-width: 250px;
         margin: auto;
       }
