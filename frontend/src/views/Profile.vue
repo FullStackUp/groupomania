@@ -232,7 +232,7 @@ h2 {
     outline-style: none;
     &:hover,
     &:focus {
-      border: 3px solid #ff6363o;
+      border: 3px solid gainsboro;
       color: #ff6363;
       cursor: pointer;
     }

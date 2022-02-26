@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light nav">
-      <img
-        class="nav__logo"
-        src="../assets/iconLong450.png"
-        alt="Logo de Groupomania"
-      />
+      <div class="logoTitle">
+        <img
+          class="nav__logo"
+          src="../assets/iconGroupomania3.png"
+          alt="Logo de Groupomania"
+        />
+        <h1 class="titleGroupomania">Groupomania</h1>
+      </div>
 
       <button
         class="navbar-toggler justify-content-center nav__menuButton"
@@ -83,10 +86,7 @@ export default {
   padding: 0.8rem;
   box-shadow: 0px 5px 15px #3f3d56;
   &__logo {
-    display: flex;
-    justify-content: flex-start;
-    max-width: 450px;
-    width: 52%;
+    width: 3rem;
   }
   &__menuButton:hover,
   &__menuButton:focus {
@@ -95,10 +95,8 @@ export default {
   a,
   button {
     font-weight: bold;
-    color: #3f3d56;
-    // &.router-link-exact-active {
-    // color: #ff6363;
-    // }
+    color: black;
+
     &:hover,
     &:focus {
       color: #ff6363;
@@ -129,6 +127,17 @@ export default {
         padding-right: 0;
       }
     }
+  }
+  .logoTitle {
+    display: flex;
+    justify-content: center;
+  }
+  .titleGroupomania {
+    color: red;
+    font-weight: bold;
+    align-items: center;
+    position: relative;
+    top: 5px;
   }
 }
 </style>
