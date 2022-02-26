@@ -1,7 +1,5 @@
 "use strict";
-
 const { Model } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
   class Like extends Model {
     static associate(models) {
@@ -11,10 +9,20 @@ module.exports = (sequelize, DataTypes) => {
       models.Like.belongsTo(models.Post, {
         foreignKey: "postId",
       });
+      models.Like.belongsTo(models.Comment, {
+        foreignKey: "commentId",
+      });
     }
   }
   Like.init(
     {
+      commentId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Comment",
+          key: "id",
+        },
+      },
       postId: {
         type: DataTypes.INTEGER,
         references: {

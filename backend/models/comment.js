@@ -1,5 +1,4 @@
 "use strict";
-
 const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
@@ -11,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       models.Comment.belongsTo(models.Post, {
         foreignKey: "postId",
       });
+      models.Comment.hasMany(models.Like);
     }
   }
   Comment.init(
@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       postId: DataTypes.INTEGER,
       userId: DataTypes.INTEGER,
       content: DataTypes.STRING,
+      imageComment: DataTypes.STRING,
+      likes: DataTypes.INTEGER,
     },
     {
       sequelize,
