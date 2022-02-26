@@ -118,7 +118,7 @@ export default {
     }
     &__logoutLink {
       border: none;
-      background-color: white;
+      background-color: whitesmoke;
       &:hover,
       &:focus {
         color: #ff6363;
