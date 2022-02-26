@@ -44,16 +44,13 @@
               type="button"
               class="newPost__option__file__btnInvisible"
             >
-              <i class="far fa-images fa-2x"></i> Choisir un fichier
+              <input
+                type="file"
+                ref="fileUpload"
+                @change="onFileSelected"
+                accept="image/*"
+              />
             </button>
-
-            <input
-              type="file"
-              ref="fileUpload"
-              @change="onFileSelected"
-              accept="image/*"
-              aria-label="Sélectionner un fichier"
-            />
           </div>
 
           <button
@@ -113,25 +110,19 @@
             <div
               class="displayPost__item__publication__text__modifyText__option"
             >
-              <div
-                class="displayPost__item__publication__text__modifyText__option__file"
-              >
-                <button
-                  @click="uploadFile"
-                  type="button"
-                  class="displayPost__item__publication__text__modifyText__option__file__btnInvisible"
-                >
-                  <i class="far fa-images fa-2x"></i> Choisir un fichier
-                </button>
+              <button
+                @click="uploadFile"
+                type="button"
+                class="displayPost__item__publication__text__modifyText__option__file__btnInvisible"
+              ></button>
 
-                <input
-                  type="file"
-                  ref="fileUpload"
-                  @change="onFileSelected"
-                  accept="image/*"
-                  aria-label="Sélectionner un fichier"
-                />
-              </div>
+              <input
+                type="file"
+                ref="fileUpload"
+                @change="onFileSelected"
+                accept="image/*"
+                aria-label="Sélectionner un fichier"
+              />
 
               <button
                 v-on:click="modifyPost(post.id)"
@@ -592,8 +583,10 @@ export default {
   }
   &__option {
     display: flex;
-    justify-content: space-around;
+    //flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
     &__file > input {
       display: none;
     }
@@ -601,8 +594,9 @@ export default {
       &__btnInvisible {
         display: flex;
         align-items: center;
-        color: #3f3d56;
         border: none;
+        width: 100px;
+        font-size: 16px;
         background-color: gainsboro;
         &:hover,
         &:focus {
@@ -619,6 +613,7 @@ export default {
       padding: 0.4rem;
       margin: 1rem;
       outline-style: none;
+      text-emphasis: none;
       &:hover,
       &:focus {
         color: #ff6363;
@@ -626,6 +621,7 @@ export default {
     }
   }
 }
+
 .displayPost {
   display: flex;
   flex-direction: column;
@@ -702,7 +698,7 @@ export default {
           box-shadow: 5px 5px 15px grey;
           &__textarea {
             border-radius: 10px;
-            width: 90%;
+            width: 95%;
           }
           &__option {
             display: flex;
@@ -713,11 +709,8 @@ export default {
             }
             &__file__btnInvisible {
               display: flex;
-              align-items: center;
-              font-size: 14px;
-              color: #3f3d56;
               border: none;
-              background-color: white;
+
               &:hover,
               &:focus {
                 color: #ff6363;
@@ -761,6 +754,9 @@ export default {
         padding-left: 0.5rem;
       }
     }
+  }
+  input[type="file"] {
+    color: transparent;
   }
 }
 
