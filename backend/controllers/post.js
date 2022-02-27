@@ -34,7 +34,7 @@ exports.createPost = (req, res, next) => {
         const post = db.Post.build({
           content: req.body.content,
           imagePost: req.file
-            ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}`
+            ? `/images/${req.file.filename}`
             : req.body.imagePost,
           UserId: userFound.id,
         });
@@ -91,9 +91,7 @@ exports.modifyPost = (req, res, next) => {
   const postObject = req.file
     ? {
         content: req.body.content,
-        imagePost: `${req.protocol}://${req.get("host")}/images/${
-          req.file.filename
-        }`,
+        imagePost: `/images/${req.file.filename}`,
       }
     : { ...req.body };
 
@@ -138,7 +136,7 @@ exports.deletePost = (req, res, next) => {
         if (post.imagePost != null) {
           const filename = post.imagePost.split("/images/")[1];
 
-          fs.unlink(`images/${filename}`, () => {
+          fs.unlink(`/images/${filename}`, () => {
             db.Post.destroy({
               where: { id: req.params.postId },
             })

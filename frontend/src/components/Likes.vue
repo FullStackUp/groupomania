@@ -41,7 +41,7 @@ export default {
       const userId = this.userId;
 
       axios
-        .get("http://localhost:5000/api/post/" + postId + "/like", {
+        .get("http://localhost:3000/api/post/" + postId + "/like", {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -55,7 +55,7 @@ export default {
 
             axios
               .post(
-                "http://localhost:5000/api/post/" + postId + "/like",
+                "http://localhost:3000/api/post/" + postId + "/like",
                 {
                   like: this.like,
                 },
@@ -80,7 +80,7 @@ export default {
 
               axios
                 .post(
-                  "http://localhost:5000/api/post/" + postId + "/like",
+                  "http://localhost:3000/api/post/" + postId + "/like",
                   {
                     like: this.like,
                   },
@@ -104,7 +104,7 @@ export default {
 
               axios
                 .post(
-                  "http://localhost:5000/api/post/" + postId + "/like",
+                  "http://localhost:3000/api/post/" + postId + "/like",
                   {
                     like: this.like,
                   },
@@ -138,7 +138,7 @@ export default {
       const userId = localStorage.getItem("userId");
 
       axios
-        .get("http://localhost:5000/api/post/" + postId + "/like", {
+        .get("http://localhost:3000/api/post/" + postId + "/like", {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),

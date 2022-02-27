@@ -96,7 +96,7 @@ export default {
       const userId = localStorage.getItem("userId");
 
       axios
-        .get("http://localhost:5000/api/user/" + userId, {
+        .get("http://localhost:3000/api/user/" + userId, {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
@@ -125,7 +125,7 @@ export default {
       formData.append("image", this.imageProfile);
 
       axios
-        .put("http://localhost:5000/api/user/" + userId, formData, {
+        .put("http://localhost:3000/api/user/" + userId, formData, {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-Type": "multipart/form-data",

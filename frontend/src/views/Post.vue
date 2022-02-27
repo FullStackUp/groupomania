@@ -325,7 +325,7 @@ export default {
   methods: {
     // Permet de créer un nouveau message
     uploadFile() {
-      this.$refs.fileUpload.click();
+      this.$refs.fileUpload[0] && this.$refs.fileUpload[0].click();
     },
     onFileSelected(event) {
       this.imagePost = event.target.files[0];
@@ -337,7 +337,7 @@ export default {
       formData.append("image", this.imagePost);
 
       axios
-        .post("http://localhost:5000/api/post", formData, {
+        .post("http://localhost:3000/api/post", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -355,7 +355,7 @@ export default {
     // Permet d'afficher tous les messages
     displayPost() {
       axios
-        .get("http://localhost:5000/api/post", {
+        .get("http://localhost:3000/api/post", {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -425,7 +425,7 @@ export default {
       formData.append("image", this.imagePost);
 
       axios
-        .put("http://localhost:5000/api/post/" + postId, formData, {
+        .put("http://localhost:3000/api/post/" + postId, formData, {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-Type": "multipart/form-data",
@@ -445,7 +445,7 @@ export default {
       const postId = id;
 
       axios
-        .delete("http://localhost:5000/api/post/" + postId, {
+        .delete("http://localhost:3000/api/post/" + postId, {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -484,7 +484,7 @@ export default {
 
       axios
         .post(
-          "http://localhost:5000/api/comment/" + postId,
+          "http://localhost:3000/api/comment/" + postId,
           {
             content: this.contentComment,
           },
@@ -510,7 +510,7 @@ export default {
       const postId = id;
 
       axios
-        .get("http://localhost:5000/api/comment/" + postId, {
+        .get("http://localhost:3000/api/comment/" + postId, {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -530,7 +530,7 @@ export default {
       const commentId = id;
 
       axios
-        .delete("http://localhost:5000/api/comment/" + commentId, {
+        .delete("http://localhost:3000/api/comment/" + commentId, {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),

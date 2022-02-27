@@ -44,7 +44,7 @@ export default {
       const userId = localStorage.getItem("userId");
 
       axios
-        .delete("http://localhost:5000/api/user/" + userId, {
+        .delete("http://localhost:3000/api/user/" + userId, {
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),

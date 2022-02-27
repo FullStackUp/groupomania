@@ -71,7 +71,7 @@ export default {
     // Permet de se connecter et de recharger la page sans que l'utilisateur soit déconnecté
     login() {
       axios
-        .post("http://localhost:5000/api/user/login", {
+        .post("http://localhost:3000/api/user/login", {
           email: this.email,
           password: this.password,
         })

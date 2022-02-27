@@ -78,7 +78,7 @@ export default {
     // Permet de s'inscrire et de basculer sur la page de connexion
     signup() {
       axios
-        .post("http://localhost:5000/api/user/signup", {
+        .post("http://localhost:3000/api/user/signup", {
           username: this.username,
           email: this.email,
           password: this.password,
