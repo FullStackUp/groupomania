@@ -583,9 +583,8 @@ export default {
   }
   &__option {
     display: flex;
-    //flex-direction: column;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     margin-top: 20px;
     &__file > input {
       display: none;
@@ -595,7 +594,6 @@ export default {
         display: flex;
         align-items: center;
         border: none;
-        width: 100px;
         font-size: 16px;
         background-color: gainsboro;
         &:hover,
