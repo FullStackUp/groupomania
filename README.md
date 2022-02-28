@@ -74,7 +74,7 @@ Remarque : si nécessaire créer un compte et installer `MAMP` pour pouvoir lanc
 
 6. Tapez (toujours dans le termninal et dossier backend) : `npx sequelize-cli init` puis valider à l'aide de la touche `entrer` du clavier
 
-Remarque : 4 nouveaux dossier (`config`, `migrations`, `seeders` et `.models`) sont creer. C'est tout à fait normal qu'il y a un `.` devant le dossier `.models`
+Remarque : 4 nouveaux dossier (`config`, `migrations`, `seeders` et `.models`) sont creer. C'est tout à fait normal qu'il y a un `.` devant le dossier `.models`, si vous rencontrez une difficulté à ce niveau ou dans un prochain niveau reférez-vous au manuel sequelize (migration) à cette adresse : `https://sequelize.org/master/manual/migrations.html`
 
 7. Rendez-vous rapidement dans le dossier `config` directement en cliquant sur la gauche dans Vscode.
 
