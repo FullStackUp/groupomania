@@ -1,6 +1,6 @@
 // Imports
-const jwt = require("jsonwebtoken");
-const db = require("../models/index");
+const jwt = require("jsonwebtoken")
+const db = require("../models/index")
 
 // Permet d'aimer un message
 exports.likePost = (req, res, next) => {
