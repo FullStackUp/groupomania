@@ -1,8 +1,8 @@
 # I) Pré-requis (projet) :
 
-Remarque : A suivre cet étape `I)` si vous n'avez pas le `projet (P7_02_code)` sinon vous pouvez passer directement à l'étape `II)`.
+Remarque : A suivre cet étape `I)` si vous n'avez pas le `projet (repo06)` sinon vous pouvez passer directement à l'étape `II)`.
 
-1. Rendez-vous sur github : `https://github.com/Esheric/P7_02_code.git`
+1. Rendez-vous sur github : `https://github.com/Esheric/repo06.git`
 
 2. Cliquez sur : `Code` (vers la droite de couleur vert)
 
@@ -10,17 +10,17 @@ Remarque : A suivre cet étape `I)` si vous n'avez pas le `projet (P7_02_code)` 
 
 4. L'extraire (doit contenir un dossier backend et frontend + un fichier README.md)
 
-5. Renommez le dossier extrait `P7_02_code-main` en `P7_02_code`
+5. Renommez le dossier extrait `repo06-main` en `repo06`
 
 # II) Modification du backend :
 
-1. Allez dans le dossier `backend`(P7_02_code > backend)
+1. Allez dans le dossier `backend`(repo06 > backend)
 
-2. Supprimer le dossiers `migrations`(P7_02_code > backend > migrations) et son contenu
+2. Supprimer le dossiers `migrations`(repo06 > backend > migrations) et son contenu
 
-3. Renommez le dossier `models`(P7_02_code > backend > models) en `copie_models`
+3. Renommez le dossier `models`(repo06 > backend > models) en `copie_models`
 
-4. Renommez le dossier `config`(P7_02_code > backend > config) en `copie_config`
+4. Renommez le dossier `config`(repo06 > backend > config) en `copie_config`
 
 # III) Pré-requis (VsCode) :
 
@@ -60,9 +60,9 @@ Remarque : si nécessaire créer un compte et installer `MAMP` pour pouvoir lanc
 
 7. puis cliquez sur : `Créer`
 
-# VI) P7_02_code (backend) :
+# VI) repo06 (backend) :
 
-1. Ouvrir `P7_02_code` dans `VsCode`
+1. Ouvrir `repo06` dans `VsCode`
 
 2. Ouvrir le `terminal`
 
@@ -104,13 +104,13 @@ Remarque : Assurez-vous d'avoir dans le dossier `config` un fichier `config.json
 
 Remarque : des `Tables`sont créer dans la DataBase `groupomania`.
 
-17. Copiez et coller le contenu du `index.js`(P7_02_code > backend > copie_models >index.js) dans `index.js`(P7_02_code > backend > .models > index.js)
+17. Copiez et coller le contenu du `index.js`(repo06 > backend > copie_models >index.js) dans `index.js`repo06 > backend > .models > index.js)
 
 18. Supprimez le dossier `copie_models`
 
-19. Renommez le fichier `config.json`(P7_02_code > backend > config > config.json) en `config.js`
+19. Renommez le fichier `config.json`(repo06 > backend > config > config.json) en `config.js`
 
-20. Creer un fichier `.env`dans le dossier `config`(P7_02_code > backend > config)
+20. Creer un fichier `.env`dans le dossier `config`(repo06 > backend > config)
 
 21. Copiez et coller ces 8 donées en ramplaçant les 3 données qui commence par `your_` avec vos valeurs dans le fichier `.env` :
 
@@ -123,21 +123,21 @@ DB_PORT="your_port_mamp "
 DB_DIALECT="mysql"
 JWT_SECRET_TOKEN="RANDOM_TOKEN"
 
-22. Renommez le dossier `.models`(P7_02_code > backend > .models) en `models`
+22. Renommez le dossier `.models`(repo06 > backend > .models) en `models`
 
-Remarque : l'API est prête, pour la lancer il suffira de faire `npm start` depuis le `terminal` dans le dossier `backend`(P7_02_code > backend) puis valider à l'aide de la touche `entrer` du clavier
+Remarque : l'API est prête, pour la lancer il suffira de faire `npm start` depuis le `terminal` dans le dossier `backend`(repo06 > backend) puis valider à l'aide de la touche `entrer` du clavier
 
-# VII) P7_02_code (frontend) :
+# VII) repo06 (frontend) :
 
-1. Se rendre dans le dossier `frontend` (P7_02_code > frontend) à l'aide du terminal(cd frontend) puis taper : `npm install` valider à l'aide de la touche `entrer` du clavier
+1. Se rendre dans le dossier `frontend` (repo06 > frontend) à l'aide du terminal(cd frontend) puis taper : `npm install` valider à l'aide de la touche `entrer` du clavier
 
-Remarque : le front est prêt pour demarrer, il suffira de faire `npm run serve` depuis le `terminal`dans le dossier `frontend` (P7_02_code > frontend) puis valider à l'aide de la touche `entrer` du clavier
+Remarque : le front est prêt pour demarrer, il suffira de faire `npm run serve` depuis le `terminal`dans le dossier `frontend` (repo06 > frontend) puis valider à l'aide de la touche `entrer` du clavier
 
 2. Dans le terminal le lien de l'API est indiquer, normalement c'est : `http://localhost:8080/`
 
 Remarque : Si necessaire il faudra installer la version `^3.0.0` de vue.js en tapant dans le `terminal` dans le dossier `frontend`(P7_02_code > frontend) : `npm install vue` et valider à l'aide de la touche `entrer` du clavier. Pour plus d'infos se rendre : `https://fr.vuejs.org/v2/guide/installation.html`
 
-# VIII) P7_02_code (API) :
+# VIII) repo06 (API) :
 
 1. Permet de `creer` des Users
 
